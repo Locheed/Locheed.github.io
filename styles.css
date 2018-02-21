@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "Mosk900";
+  src: url("./fonts/Mosk Ultra-Bold 900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mosk200";
+  src: url("./fonts/Mosk Extra-Light 200.ttf") format("truetype");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+/* Main styles */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  /* overflow: hidden; */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding-top: 50px;
+  padding-left: 40px;
+}
+
+/* Header font styles */
+
+header {
+  position: relative;
+}
+
+header h1 {
+  font-family: "Mosk900";
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: #f2f2f2;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 0px 0px 70px #ffe200;
+}
+
+/* Check if text-stroke is supported. Fallback to text-shadow. */
+
+@supports ((-webkit-text-stroke-color: #000) and (-webkit-text-fill-color: #f2f2f2)) or ((-moz-text-stroke-color: #000) and (-moz-text-fill-color: #f2f2f2)) {
+  header h1 {
+    -moz-text-fill-color: #f2f2f2;
+    -webkit-text-fill-color: #f2f2f2;
+    -moz-text-stroke-color: #000;
+    -webkit-text-stroke-color: #000;
+    -moz-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 3px;
+  }
+}
+
+header h3 {
+  position: absolute;
+  bottom: -18px;
+  left: 18px;
+  font-size: 3rem;
+  margin: 0;
+  color: #ffe200;
+}
+
+/* Profile picture */
+
+.profile-picture {
+  position: relative;
+}
+
+.profile-picture img {
+  width: 350px;
+  transform: rotate(-22deg);
+  position: absolute;
+  bottom: -387px;
+  right: -176px;
+}
+
+/* Main content */
+
+main .content {
+  max-width: 340px;
+  height: auto;
+}
+
+/* Monkey icon */
+
+.monkey {
+  width: 60px;
+  position: absolute;
+  top: 58px;
+  left: 20px;
+}
+
+/* Main text */
+
+.main-text-container {
+  position: relative;
+  padding-top: 80px;
+  font-family: "Mosk200";
+  max-width: 70%;
+}
+
+.main-text-container h3 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+.main-text-container h3 span {
+  text-transform: uppercase;
+}
+
+/* Monkey feeding */
+
+.content h4 {
+  font-size: 1.125rem;
+  max-width: 70%;
+  text-transform: uppercase;
+  margin: 30px auto;
+}
+
+.content h4 span {
+  color: #906140;
+}
+
+/* Banana logo area*/
+
+.banana {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banana img {
+  width: 60px;
+}
+
+.banana-top,
+.banana-bottom {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.banana-top {
+  left: 135px;
+  top: 0;
+}
+
+.banana-bottom {
+  right: 100px;
+  bottom: -23px;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  margin: 40px 30px;
+}
+
+footer a {
+  color: #ffe200;
+  text-decoration: none;
+  font-weight: 700;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s linear;
+}
+
+footer a:hover {
+  border-width: 2px;
+  border-color: #ffe200;
+}
+
+/* Media queries */
+
+@media (min-width: 630px) {
+  main .content {
+    max-width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banana-top {
+    left: 0px;
+    top: 0;
+  }
+
+  .banana-bottom {
+    right: -60px;
+    bottom: -23px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html,
+  body {
+    height: 100%;
+  }
+  .profile-picture img {
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+
+    position: absolute;
+    bottom: -683px;
+    right: -287px;
+  }
+}
